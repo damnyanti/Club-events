@@ -19,7 +19,7 @@ class Club(models.Model):
             return self.club_name
 
 class Post(models.Model):
-    club_name = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    club_name = models.ForeignKey(Club, on_delete=models.CASCADE)
     uid = models.CharField(max_length=30)
     updated_on  = models.CharField(max_length=50)
     content     = models.TextField()
