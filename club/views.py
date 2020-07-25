@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Club
 
 
 def index(request):
-    return HttpResponse("You will see all the clubs here")
+    all_clubs = Club.objects.all()
+    context = {'all_clubs': all_clubs}
+    return render(request, 'clubs.html', context)
 

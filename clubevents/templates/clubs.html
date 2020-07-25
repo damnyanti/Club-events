@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Welcome, to the club page</h2>
+  {% if all_clubs %}
+    <h3>Here, are all the clubs</h3>
+    {% for club in all_clubs %}
+        <h1><li>{{ club.club_name }}</li></h1>
+        <h5>Contact {{ club.secretary }}</h5>
+    {% endfor %}
+  {% else %}
+    <h3>No clubs</h3>
+  {% endif %}
+{% endblock %}
