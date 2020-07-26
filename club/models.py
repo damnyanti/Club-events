@@ -15,12 +15,13 @@ CLUBS=[
 class Club(models.Model):
         club_name = models.CharField(max_length=50, choices=CLUBS)
         secretary = models.CharField(max_length=30)
+        club_id= models.CharField(max_length=50)
 
         def __str__(self):
             return self.club_name
 
         def get_absolute_url(self):
-            return reverse('detail', kwargs={'pk': self.pk })
+            return reverse('detail', kwargs={'pk': self.club_id })
 
 class Post(models.Model):
     club_name = models.ForeignKey(Club, on_delete=models.CASCADE)
