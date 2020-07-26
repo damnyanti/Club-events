@@ -23,4 +23,4 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def AboutUs(request):
-    return HttpResponse("We are Priya and Damayanti")
+    return render(request, 'aboutUs.html')

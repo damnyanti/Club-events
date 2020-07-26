@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 CLUBS=[
     ('Coding Club','Coding Club IITG'),
@@ -17,6 +18,9 @@ class Club(models.Model):
 
         def __str__(self):
             return self.club_name
+
+        def get_absolute_url(self):
+            return reverse('detail', kwargs={'pk': self.pk })
 
 class Post(models.Model):
     club_name = models.ForeignKey(Club, on_delete=models.CASCADE)
