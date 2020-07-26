@@ -20,7 +20,9 @@ def index(request):
     context = {'all_clubs': all_clubs}
     return render(request, 'clubs.html', context)
 
-def detail(request, club_name):
-    club_oname  = CLUB_NAMES[club_name]
-    return render(request, 'detail.html', {'club_name':club_oname})
+def detail(request, club_id):
+    club_ = get_object_or_404(Club, pk= club_id)
+    return render(request, 'detail.html', {'club': club_ })
+    # club_oname  = CLUB_NAMES[club_name]
+    # return render(request, 'detail.html', {'club_name':club_oname})
 

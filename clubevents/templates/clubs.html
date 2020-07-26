@@ -5,7 +5,7 @@
   {% if all_clubs %}
     <h3>Here, are all the clubs</h3>
     {% for club in all_clubs %}
-        <h1><li><a href= "{% url 'detail' "xpressionsiitg" %}"  >{{ club.club_name }}</a></li></h1>
+        <h1><li><a href= "{% url 'detail' club.id %}"  >{{ club.club_name }}</a></li></h1>
     {% endfor %}
   {% else %}
     <h3>No clubs</h3>
